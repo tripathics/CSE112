@@ -1,0 +1,15 @@
+Step 1:  What is the first value?
+        if same: Then put that value.
+        if different then put j = i;
+
+Step 2:  Check if the values are increasing or decreasing
+        if increasing then put the condition <= and ++
+        if decreasing then put the condition >= and --
+
+Step 3: Check the last value in each row
+        if same then put that value in j<= that last number
+        if different then j<=i
+
+Step 4: Write the condition of i 
+        if increasing then (i=i; i<=5; i++)
+        if decreasing then (i=5; i>=1; i--)
