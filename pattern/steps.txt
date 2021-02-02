@@ -13,3 +13,6 @@ Step 3: Check the last value in each row
 Step 4: Write the condition of i 
         if increasing then (i=i; i<=5; i++)
         if decreasing then (i=5; i>=1; i--)
+
+Note: First 3 steps are for the condition of j (i.e. inside loop)
+      and Step 4 is for i (i.e. outer loop)
