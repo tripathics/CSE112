@@ -1,1 +1,2 @@
-.bin  #for binary
+.bin/  #for binary
+.vscode/
