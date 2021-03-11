@@ -21,7 +21,7 @@ int main(void)
 
     //Declaring dest and concat strings
     string dest = malloc(strlen(src) + 1);
-    string concat = malloc(strlen(src) + strlen(dest) + 1);
+    string concat = malloc(2 * strlen(src) + 1);
 
     //Copying string from src to dest
     if (src != NULL)
