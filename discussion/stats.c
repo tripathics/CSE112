@@ -3,7 +3,7 @@
 
 /**
  * Function takes set of numbers and evaluates its various MEASURES OF CENTRAL TENDENCY 
- * Input: Numbers of which we are finding central tendency
+ * Input: Numbers of which we are finding central tendency, number of numbers,
  *        Pointers to sum, average and standard deviation
  * 
  * Output: Void
@@ -30,7 +30,7 @@ int main(void)
     }
 
     // Measures of central tendency
-    int sum = 0;
+    int sum;
     double average, std_dev;
     
     // Calling the statistics function
@@ -62,6 +62,7 @@ int main(void)
 void central(int num[], int N, int *sum, double *u, double *S)
 {
     // Calculating the Sum
+    *sum = 0;
     for (int i = 0; i < N; i++)
     {
         *sum += num[i];

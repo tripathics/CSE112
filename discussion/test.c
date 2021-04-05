@@ -3,10 +3,8 @@
 
 int main(void)
 {
-    char ch = '1';
+    int x = 5, y = 2;
+    float a = 5.0 / 2;
 
-    int num = ch;
-    printf("%i\n", num);
-
-    return 0;
+    printf("%f\n", a);
 }
