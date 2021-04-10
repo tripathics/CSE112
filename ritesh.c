@@ -3,15 +3,14 @@
 int main()
 {
        int i;
-       float y, final, z, x, add=0;
-       printf("Enter the value of x: ")       ;
+       float x, y, z, add = 0;
+       printf("Enter the value of x: ");
        scanf("%f", &x);
        z = (x-1)/x;
-       for(i=2; i<=7; i++)
+       for(i=1; i < 8; i++)
        {
-              y = (1*pow((x-1)/x , i))/2;
+              y = (pow(z, i)) / (float)i;
               add = add + y;
        }
-       final = z + add;
-       printf("Total sum = %f\n", final);
+       printf("Total sum = %f\n", add);
 }
