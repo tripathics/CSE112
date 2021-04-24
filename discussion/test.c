@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define PI 3.14
+
 int main(void)
 {
-    int x = 5, y = 2;
-    float a = 5.0 / 2;
+    int x = 5;
+    float y = 3.14;
+    ;
 
-    printf("%f\n", a);
+    printf("%f\n", y);
 }
