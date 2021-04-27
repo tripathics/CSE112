@@ -55,7 +55,7 @@ int main(void)
             }
         }
 
-        printf("Do you want to add more? (Y/N): ");
+        printf("Continue? (Y/N): ");
         scanf("%s", ch);
     }
 

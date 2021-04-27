@@ -1,33 +1,33 @@
 #include <stdio.h>
 
-#define MAX 50
-
 // declaring global array
-int array[MAX];
+
 
 void swap(int *x, int *y);
 
 int main(void)
 {
-    int size;
+    size_t size;
 
     // getting size of array from user
     printf("How many numbers do you want to enter?\t");
-    scanf("%d", &size);
-
+    scanf("%zu", &size);
+    
+    int array[size];
+    
     // getting array elements from user
     printf("Enter the array elements:\n");
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         scanf("%d", &array[i]);
     }
     
     // sorting
     
-    for (int i = 0; i < size - 1; i++)
+    for (size_t i = 0; i < size - 1; i++)
     {
-        int in_smallest = i;                        // index of smallest number encountered so far
-        for (int j = i + 1; j < size; j++)
+        size_t in_smallest = i;                        // index of smallest number encountered so far
+        for (size_t j = i + 1; j < size; j++)
         {
             if (array[in_smallest] > array[j])
             {
@@ -39,9 +39,9 @@ int main(void)
     }
 
     printf("sorted: ");
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
-        printf("%i ", array[i]);
+        printf("%i\t", array[i]);
     }
     printf("\n");
 

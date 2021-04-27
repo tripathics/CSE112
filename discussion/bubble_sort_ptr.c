@@ -1,25 +1,23 @@
 #include <stdio.h>
 
-#define MAX 50
-int array[MAX];
-
 void swap(int *a, int *b);
 
 int main(void)
 {
     // Getting size of array
-    int size;
+    size_t size;
     printf("Size of array: ");
-    scanf("%i", &size);
+    scanf("%zu", &size);
+    
+    int array[size];
 
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
-        printf("Element %i: ", i + 1);
         scanf("%i", &array[i]);
     }
     
     // i for the last element of array
-    for (int i = size - 1, swap_counter = 1; swap_counter != 0; i--)
+    for (size_t i = size - 1, swap_counter = 1; swap_counter != 0; i--)
     {
         swap_counter = 0;
         for (int j = 0; j < i; j++)
@@ -33,7 +31,7 @@ int main(void)
     }
 
     // Printing the sorted array
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         printf("%i ", array[i]);
     }
