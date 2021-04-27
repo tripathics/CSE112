@@ -10,7 +10,7 @@ int main(void)
     scanf("%i", &N);
 
     int set[N];
-    printf("Enter three numbers: ");
+    printf("Enter the numbers: ");
     for (int i = 0; i < N; i++)     scanf("%i", &set[i]);
 
     // printing current values before shifting
