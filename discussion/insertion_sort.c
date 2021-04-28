@@ -50,7 +50,9 @@ void insertion_sort(int array[], size_t size)
     // for the marker between sorted and unsorted arrays
     for (size_t marker = 1; marker < size; marker++)
     {
+        // number of places to shift the element that is currently being sorted
         size_t places = 1;
+        
         // comparing the ussorted and sorted
         if (array[marker - 1] > array[marker])
         {
