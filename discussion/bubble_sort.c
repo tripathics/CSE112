@@ -1,30 +1,37 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 void swap(int *a, int *b);
 
 int main(void)
 {
+    // Getting size of array
+    size_t size;
+    printf("Size of array: ");
+    scanf("%zu", &size);
     
-    int array[] = {1, 2, 3, 4, 5, 8, 7, 6};
+    int array[size];
 
-    // i for the last element of array
-    bool swap_check = true;
-    for (size_t i = 8 - 1; swap_check != false; i--)
+    for (size_t i = 0; i < size; i++)
     {
-        swap_check = false;
+        scanf("%i", &array[i]);
+    }
+    
+    // i for the last element of array
+    for (size_t i = size - 1, swap_counter = 1; swap_counter != 0; i--)
+    {
+        swap_counter = 0;
         for (int j = 0; j < i; j++)
         {
             if (array[j] > array[j + 1])
             {
                 swap(&array[j], &array[j + 1]);
-                swap_check = true;
+                swap_counter++;
             }
         }
     }
 
     // Printing the sorted array
-    for (size_t i = 0; i < 8; i++)
+    for (size_t i = 0; i < size; i++)
     {
         printf("%i ", array[i]);
     }

@@ -72,15 +72,15 @@ void shift(int array[], size_t marker, size_t places)
 {
     int temp = array[marker];                        // first element of unsorted array
 
-    // number smaller than the first element of unsorted array
-    long smaller = marker - places;
+    // index where number that is just greater than the first element of unsorted array
+    long just_larger = marker - places;
 
-    for (long i = marker; i > smaller; i--)
+    for (long i = marker; i > just_larger; i--)
     {
         array[i] = array[i - 1];
     }
 
-    array[smaller] = temp;
+    array[just_larger] = temp;
 
     return;
 }
