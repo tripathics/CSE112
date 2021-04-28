@@ -36,7 +36,7 @@ int main(void)
 
 void bubble_sort(int array[], size_t size)
 {
-    // checking whether there is any swap in an iteration in the for loop
+    // to check whether there is any swap in an iteration in the for loop
     bool swap_check = true;
 
     for (size_t i = size - 1; swap_check != false; i--)
