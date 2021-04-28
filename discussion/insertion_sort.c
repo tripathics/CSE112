@@ -12,15 +12,15 @@
 
 #include <stdio.h>
 
-void insertion_sort(int array[], int size);
-void shift(int array[], int marker, int places);
+void insertion_sort(int array[], size_t size);
+void shift(int array[], size_t marker, size_t places);
 
 int main(void)
 {
     // getting input 
-    int size;
+    size_t size;
     printf("Size of array: ");
-    scanf("%i", &size);
+    scanf("%zu", &size);
 
     int array[size];
 
@@ -35,7 +35,7 @@ int main(void)
 
     // printing the sorted array
     printf("Sorted: ");
-    for (int i = 0; i < size; i++)
+    for (size_t i = 0; i < size; i++)
     {
         printf("%i%s", array[i], (i != size - 1) ? ", " : "");
     }
@@ -45,18 +45,18 @@ int main(void)
 }
 
 
-void insertion_sort(int array[], int size)
+void insertion_sort(int array[], size_t size)
 {
     // for the marker between sorted and unsorted arrays
-    for (int marker = 0; marker < size - 1; marker++)
+    for (size_t marker = 1; marker < size; marker++)
     {
-        int places = 1;
+        size_t places = 1;
         // comparing the ussorted and sorted
-        if (array[marker] > array[marker + 1])
+        if (array[marker - 1] > array[marker])
         {
-            for (long j = marker - 1; j >= 0; j--)
+            for (long j = marker - 2; j >= 0; j--)
             {
-                if (array[j] < array[marker + 1])
+                if (array[j] < array[marker])
                 {
                     break;
                 }
@@ -68,17 +68,19 @@ void insertion_sort(int array[], int size)
     }
 }
 
-void shift(int array[], int marker, int places)
+void shift(int array[], size_t marker, size_t places)
 {
-    int temp = array[marker + 1];                        // first element of unsorted array
+    int temp = array[marker];                        // first element of unsorted array
 
-    int less_than_unsorted = marker - places;
-    for (int i = marker; i > less_than_unsorted; i--)
+    // number smaller than the first element of unsorted array
+    long smaller = marker - places;
+
+    for (long i = marker; i > smaller; i--)
     {
-        array[i + 1] = array[i];
+        array[i] = array[i - 1];
     }
 
-    array[less_than_unsorted + 1] = temp;
+    array[smaller] = temp;
 
     return;
 }

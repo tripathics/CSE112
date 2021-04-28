@@ -5,9 +5,9 @@
 
 int main(void)
 {
-    int x = 5;
-    float y = 3.14;
-    ;
+    size_t a = 0;
+    size_t b = 2;
 
-    printf("%f\n", y);
+    int z = a - b;
+    printf("%i\n", z);
 }
