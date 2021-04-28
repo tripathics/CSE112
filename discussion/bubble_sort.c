@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 void swap(int *a, int *b);
+void bubble_sort(int array[], size_t size);
+
 
 int main(void)
 {
-    // Getting size of array
+    // Getting input from user
     size_t size;
     printf("Size of array: ");
     scanf("%zu", &size);
@@ -15,20 +18,11 @@ int main(void)
     {
         scanf("%i", &array[i]);
     }
+
+    // sorting
+    bubble_sort(array, size);
     
-    // i for the last element of array
-    for (size_t i = size - 1, swap_counter = 1; swap_counter != 0; i--)
-    {
-        swap_counter = 0;
-        for (int j = 0; j < i; j++)
-        {
-            if (array[j] > array[j + 1])
-            {
-                swap(&array[j], &array[j + 1]);
-                swap_counter++;
-            }
-        }
-    }
+    
 
     // Printing the sorted array
     for (size_t i = 0; i < size; i++)
@@ -38,6 +32,27 @@ int main(void)
     printf("\n");
     return 0;
 }
+
+
+void bubble_sort(int array[], size_t size)
+{
+    // checking whether there is any swap in an iteration in the for loop
+    bool swap_check = true;
+
+    for (size_t i = size - 1; swap_check != false; i--)
+    {
+        swap_check = false;
+        for (int j = 0; j < i; j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                swap(&array[j], &array[j + 1]);
+                swap_check = true;
+            }
+        }
+    }
+}
+
 
 void swap(int *a, int *b)
 {
